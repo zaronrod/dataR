@@ -4,15 +4,17 @@ install.packages('TTR')
 library('TTR')
 library('quantmod')
 
-df_intc <- getSymbols('ODPV3.SA',src='yahoo',auto.assign=FALSE)
+df_stock <- getSymbols('ODPV3.SA',src='yahoo',auto.assign=FALSE)
 
-class(df_intc)
+class(df_stock)
 
-nrow(df_intc)
+nrow(df_stock)
 
-tail(df_intc,2)
+tail(df_stock,2)
 
-plot(df_intcINTC.Close,main = 'Stock Price') +
-chart_Series(df_intc$INTC.Close,name="Stock Price") +
-chartSeries(df_intc,name="Stock Price",theme = 'white',subset='2018::2020')
+plot(df_stock$ODPV3.SA.Close,main = 'Stock Price')
+
+chart_Series(df_stock$ODPV3.SA.Close,name="Stock Price") +
+
+chartSeries(df_stock$ODPV3.SA.Close,name="Stock Price",theme = 'white',subset='2018::2020')
 
